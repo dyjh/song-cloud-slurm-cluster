@@ -1,0 +1,98 @@
+Commercial Software License
+
+Licensed Work:      SongCloud HPC Cluster Service Platform
+Version:            V1.0.0
+Licensor:           Shanghai SongCloud Technology Co., Ltd.
+                    (上海凇云数据科技有限公司)
+Copyright:          Copyright (c) 2026 上海凇云数据科技有限公司
+
+All rights held by the Licensor are reserved.
+
+------------------------------------------------------------------------
+
+Definitions
+
+"Licensed Work" means the portions of the software and accompanying
+materials in this runtime package that the Licensor owns and is
+entitled to license.
+
+"User" means the individual or organization obtaining or using the
+Licensed Work.
+
+"Commercial Authorization" means the permission granted by the Licensor
+for use of the Licensed Work, as recorded in the purchased license and
+any separate written agreement between the parties.
+
+"License Code" means the code supplied by the Licensor to validate the
+Commercial Authorization in the platform.
+
+"Third-Party Components" means components supplied under licenses from
+other rights holders.
+
+------------------------------------------------------------------------
+
+Terms
+
+Section 1  Public Availability
+
+The Licensed Work is commercial software. Publication in a public
+repository and availability for download provide access to product
+information and delivery files. They do not grant free use or an
+open-source license to the Licensed Work.
+
+Section 2  Authorized Use
+
+Installation and operation require a valid License Code and must remain
+within the Commercial Authorization granted to the User. The User may
+make copies necessary for authorized installation and backup, provided
+that applicable copyright and license notices are retained.
+
+Section 3  Duration, Node Allowance and IP Restrictions
+
+The authorization period, permitted number of nodes and any IP
+restrictions are determined by the purchased license and the parties'
+written agreement. Unlimited validity does not by itself include
+unlimited nodes, free updates or unlimited technical support.
+
+The User must keep the License Code private and must not provide or
+share authorization with unauthorized third parties.
+
+Section 4  Resale, Sublicensing and Redistribution
+
+Unless applicable law or a Third-Party Component's license provides
+otherwise, resale, sublicensing or redistribution of the Licensed Work
+or its runtime package requires the Licensor's written permission.
+Public availability for download does not grant such permission.
+
+Section 5  Deployment, Updates and Support
+
+Remote deployment assistance, version updates, technical support and
+support duration are subject to the parties' specific agreement.
+Purchasing the Licensed Work does not include third-party computing
+applications, AI services or their licenses.
+
+Section 6  Expired or Invalid Authorization
+
+The User must renew an expired authorization or replace an invalid
+License Code before continuing to use the Licensed Work. The accompanying
+README describes online verification and platform access restrictions.
+
+Section 7  Third-Party Components
+
+Third-Party Components remain subject to their respective licenses.
+This License neither restricts rights granted by those licenses nor
+grants rights that the Licensor is not entitled to grant. Applicable
+third-party copyright and license notices must be retained as required
+by those licenses.
+
+Section 8  Other Agreements and Applicable Law
+
+Rights not granted by this License remain with their respective holders.
+A separate written agreement between the parties takes precedence over
+these terms where they differ. Nothing in this License excludes rights
+or obligations that cannot be excluded under applicable law.
+
+------------------------------------------------------------------------
+
+For commercial authorization, deployment assistance or support,
+contact the Licensor through the channel used to purchase the software.

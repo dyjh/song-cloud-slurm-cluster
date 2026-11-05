@@ -1,0 +1,10 @@
+软件：凇云超算集群服务平台
+版本：v1.0.0
+构建日期：2026-11-05 Asia/Shanghai
+Git HEAD：318bd36e53e31e23902c635e0d65016bec6004c6
+管理端：npm run build（production）
+用户端：npm run build（vue-tsc + Vite）
+服务端：Go 1.25.9 / linux amd64 / CGO_ENABLED=1 / trimpath / stripped
+最低 glibc：2.34
+授权端：https://auth.songclouddata.com/license/verify
+未部署、未执行数据库迁移

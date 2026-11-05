@@ -1,0 +1,11 @@
+{
+  "version": "1.1.0",
+  "artifacts": [
+    {
+      "os": "linux",
+      "arch": "amd64",
+      "filename": "hpc-node-probe-linux-amd64",
+      "sha256": "b0885ddcaf44f8cfb92a791a27ca9af7a084385ac2704131c3e4967d61352001"
+    }
+  ]
+}

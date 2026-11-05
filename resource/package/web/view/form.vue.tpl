@@ -1,0 +1,288 @@
+{{- if .IsAdd }}
+// 新增表单中增加如下代码
+{{- range .Fields}}
+     {{- if .Form}}
+        {{ GenerateFormItem . }}
+     {{- end }}
+{{- end }}
+
+// 字典增加如下代码
+    {{- range $index, $element := .DictTypes}}
+const {{ $element }}Options = ref([])
+    {{- end }}
+
+// 将以下字典加载加入现有初始化的 try 块；失败时显示原因并禁止提交。
+
+{{- range $index, $element := .DictTypes }}
+    {{ $element }}Options.value = await getDictFunc('{{$element}}')
+{{- end }}
+
+// 基础formData结构增加如下字段
+{{- range .Fields}}
+          {{- if .Form}}
+            {{ GenerateDefaultFormValue . }}
+          {{- end }}
+        {{- end }}
+// 验证规则中增加如下字段
+
+{{- range .Fields }}
+        {{- if .Form }}
+            {{- if eq .Require true }}
+{{.FieldJson }} : [{
+    required: true,
+    message: '{{ .ErrorText }}',
+    trigger: ['input','blur'],
+},
+               {{- if eq .FieldType "string" }}
+{
+    whitespace: true,
+    message: '不能只输入空格',
+    trigger: ['input', 'blur'],
+}
+              {{- end }}
+],
+            {{- end }}
+        {{- end }}
+    {{- end }}
+
+{{- if .HasDataSource }}
+// 请引用
+get{{.StructName}}DataSource,
+
+//  获取数据源
+const dataSource = ref([])
+const getDataSourceFunc = async()=>{
+  const res = await get{{.StructName}}DataSource()
+  if (res.code === 0) {
+    dataSource.value = res.data
+  }
+}
+getDataSourceFunc()
+{{- end }}
+{{- else }}
+{{- if not .OnlyTemplate }}
+<template>
+  <div>
+    <div class="gva-form-box">
+      <el-alert v-if="initError" type="error" :closable="false" class="mb-3">
+        <template #title>{{"{{"}} initError {{"}}"}}</template>
+        <el-button link type="primary" :loading="initLoading" @click="init">重新加载</el-button>
+      </el-alert>
+      <el-form :disabled="initLoading || !!initError" :model="formData" ref="elFormRef" label-position="right" :rules="rule" label-width="80px">
+        {{- if .IsTree }}
+          <el-form-item label="父节点:" prop="parentID" >
+              <el-tree-select
+                  v-model="formData.parentID"
+                  :data="[rootNode,...tableData]"
+                  check-strictly
+                  :render-after-expand="false"
+                  :props="defaultProps"
+                  clearable
+                  style="width: 240px"
+                  placeholder="根节点"
+              />
+          </el-form-item>
+        {{- end }}
+      {{- range .Fields}}
+      {{- if .Form }}
+        {{ GenerateFormItem . }}
+      {{- end }}
+      {{- end }}
+        <el-form-item>
+          <el-button :loading="btnLoading" type="primary" @click="save">保存</el-button>
+          <el-button type="primary" @click="back">返回</el-button>
+        </el-form-item>
+      </el-form>
+    </div>
+  </div>
+</template>
+
+<script setup>
+import {
+  {{- if .HasDataSource }}
+    get{{.StructName}}DataSource,
+  {{- end }}
+  {{- if .IsTree }}
+    get{{.StructName}}List,
+  {{- end }}
+  create{{.StructName}},
+  update{{.StructName}},
+  find{{.StructName}}
+} from '@/api/{{.Package}}/{{.PackageName}}'
+
+defineOptions({
+    name: '{{.StructName}}Form'
+})
+
+// 自动获取字典
+import { getDictFunc } from '@/utils/format'
+import { useRoute, useRouter } from "vue-router"
+import { ElMessage } from 'element-plus'
+import { ref, reactive } from 'vue'
+{{- if .HasPic }}
+// 图片选择组件
+import SelectImage from '@/components/selectImage/selectImage.vue'
+{{- end }}
+
+{{- if .HasFile }}
+// 文件选择组件
+import SelectFile from '@/components/selectFile/selectFile.vue'
+{{- end }}
+
+{{- if .HasRichText }}
+// 富文本组件
+import RichEdit from '@/components/richtext/rich-edit.vue'
+{{- end }}
+
+{{- if .HasArray}}
+// 数组控制组件
+import ArrayCtrl from '@/components/arrayCtrl/arrayCtrl.vue'
+{{- end }}
+
+
+const route = useRoute()
+const router = useRouter()
+
+{{- if .IsTree }}
+const tableData = ref([])
+
+const defaultProps = {
+  children: "children",
+  label: "{{ .TreeJson }}",
+  value: "{{ .PrimaryField.FieldJson }}"
+}
+
+const rootNode = {
+  {{ .PrimaryField.FieldJson }}: 0,
+  {{ .TreeJson }}: '根节点',
+  children: []
+}
+
+const getTableData = async() => {
+  const table = await get{{.StructName}}List()
+  if (table.code !== 0) throw new Error(table.msg || '父节点加载失败')
+  if (table.data !== null && !Array.isArray(table.data)) throw new Error('父节点响应格式错误')
+  // BuildTree 在无根节点时返回 null。
+  tableData.value = table.data === null ? [] : table.data
+}
+
+{{- end }}
+
+// 提交按钮loading
+const btnLoading = ref(false)
+
+const type = ref('')
+const initLoading = ref(true)
+const initError = ref('')
+    {{- range $index, $element := .DictTypes}}
+const {{ $element }}Options = ref([])
+    {{- end }}
+const formData = ref({
+        {{- if .IsTree }}
+            parentID: undefined,
+        {{- end }}
+        {{- range .Fields}}
+          {{- if .Form }}
+            {{ GenerateDefaultFormValue . }}
+          {{- end }}
+        {{- end }}
+        })
+// 验证规则
+const rule = reactive({
+    {{- range .Fields }}
+            {{- if eq .Require true }}
+               {{.FieldJson }} : [{
+                   required: true,
+                   message: '{{ .ErrorText }}',
+                   trigger: ['input','blur'],
+               }],
+            {{- end }}
+    {{- end }}
+})
+
+const elFormRef = ref()
+
+{{- if .HasDataSource }}
+  const dataSource = ref([])
+  const getDataSourceFunc = async()=>{
+    const res = await get{{.StructName}}DataSource()
+    if (res.code !== 0) throw new Error(res.msg || '关联数据加载失败')
+    dataSource.value = res.data
+  }
+{{- end }}
+
+// 初始化失败时禁止提交；读取失败不能转成创建操作。
+const init = async () => {
+  initLoading.value = true
+  initError.value = ''
+  try {
+    {{- if .IsTree }}
+    await getTableData()
+    {{- end }}
+    {{- if .HasDataSource }}
+    await getDataSourceFunc()
+    {{- end }}
+    type.value = route.query.id ? 'update' : 'create'
+    if (route.query.id) {
+      const res = await find{{.StructName}}({ ID: route.query.id })
+      if (res.code !== 0) throw new Error(res.msg || '记录加载失败')
+      formData.value = res.data
+    }
+    {{- if .DictTypes }}
+    [{{range $index, $element := .DictTypes}}{{if $index}}, {{end}}{{ $element }}Options.value{{end}}] = await Promise.all([
+      {{- range $index, $element := .DictTypes }}
+      getDictFunc('{{$element}}'),
+      {{- end }}
+    ])
+    {{- end }}
+  } catch (error) {
+    initError.value = error.message
+  } finally {
+    initLoading.value = false
+  }
+}
+
+init()
+
+const save = async () => {
+  if (btnLoading.value || initLoading.value || initError.value) return
+  btnLoading.value = true
+  try {
+    const valid = await new Promise((resolve) => elFormRef.value.validate(resolve))
+    if (!valid) return
+    let res
+    if (type.value === 'create') {
+      res = await create{{.StructName}}(formData.value)
+    } else if (type.value === 'update') {
+      res = await update{{.StructName}}(formData.value)
+    } else {
+      throw new Error('表单操作类型无效')
+    }
+    if (res.code !== 0) throw new Error(res.msg || '保存失败')
+    ElMessage({ type: 'success', message: '创建/更改成功' })
+  } catch (error) {
+    ElMessage.error(error.message)
+  } finally {
+    btnLoading.value = false
+  }
+}
+
+// 返回按钮
+const back = () => {
+    router.go(-1)
+}
+
+</script>
+
+<style>
+</style>
+{{- else }}
+<template>
+<div>form</div>
+</template>
+<script setup>
+</script>
+<style>
+</style>
+{{- end }}
+{{- end }}
