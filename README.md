@@ -1,7 +1,7 @@
 <div align="center">
   <img src="dist/logo.png" width="88" alt="凇云数据" />
   <h1>凇云超算集群服务平台</h1>
-  <p>SongCloud HPC · v1.0.0</p>
+  <p>SongCloud HPC · v1.1.0</p>
   <p>面向 Slurm 集群的资源管理、作业服务与用户工作空间</p>
   <p>Go · Gin · Vue 3 · TypeScript · MySQL · Redis</p>
   <p>简体中文 | <a href="README-en.md">English</a></p>

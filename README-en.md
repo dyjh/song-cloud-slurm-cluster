@@ -1,7 +1,7 @@
 <div align="center">
   <img src="dist/logo.png" width="88" alt="SongCloud Data" />
   <h1>SongCloud HPC Cluster Service Platform</h1>
-  <p>SongCloud HPC · v1.0.0</p>
+  <p>SongCloud HPC · v1.1.0</p>
   <p>Resource management, job services and user workspaces for Slurm clusters</p>
   <p>Go · Gin · Vue 3 · TypeScript · MySQL · Redis</p>
   <p><a href="README.md">简体中文</a> | English</p>
