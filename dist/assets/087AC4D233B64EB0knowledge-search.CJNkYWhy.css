@@ -1,0 +1,4 @@
+/*! 
+ Build based on gin-vue-admin 
+ Time : 1795531370000 */
+.knowledge-search-conditions[data-v-03618d54]{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;display:grid}.knowledge-search-text[data-v-03618d54]{white-space:pre-wrap;overflow-wrap:anywhere;margin:12px 0}.knowledge-search-context[data-v-03618d54]{border-left:3px solid var(--el-border-color);margin-top:10px;padding-left:12px}@media (max-width:640px){.knowledge-search-conditions[data-v-03618d54]{grid-template-columns:minmax(0,1fr)}}
