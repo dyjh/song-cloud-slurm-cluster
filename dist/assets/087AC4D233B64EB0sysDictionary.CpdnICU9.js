@@ -1,0 +1,4 @@
+/*! 
+ Build based on gin-vue-admin 
+ Time : 1795604097000 */
+import{et as e}from"./087AC4D233B64EB0user.t95gmaSP.js";var t=t=>e({url:`/sysDictionary/createSysDictionary`,method:`post`,data:t}),n=t=>e({url:`/sysDictionary/deleteSysDictionary`,method:`delete`,data:t}),r=t=>e({url:`/sysDictionary/updateSysDictionary`,method:`put`,data:t}),i=t=>e({url:`/sysDictionary/findSysDictionary`,method:`get`,params:t}),a=t=>e({url:`/sysDictionary/getSysDictionaryList`,method:`get`,params:t}),o=t=>e({url:`/sysDictionary/exportSysDictionary`,method:`get`,params:t}),s=t=>e({url:`/sysDictionary/importSysDictionary`,method:`post`,data:t});export{a,i,n,s as o,o as r,r as s,t};

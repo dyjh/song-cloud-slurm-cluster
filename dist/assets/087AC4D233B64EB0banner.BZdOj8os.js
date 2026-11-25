@@ -1,4 +1,4 @@
 /*! 
  Build based on gin-vue-admin 
- Time : 1795531370000 */
+ Time : 1795604097000 */
 import{$ as e,F as t,O as n,S as r,Y as i,Z as a,h as o,lt as s,w as c}from"./087AC4D233B64EB0vue.runtime.esm-bundler.wiulPJRg.js";var l=`/assets/087AC4D233B64EB0banner.BnKmBxXj.jpg`,u=`/assets/087AC4D233B64EB0banner2.CEIAvdoV.jpg`;t();var d={__name:`banner`,setup(t){let d=e=>{window.open(e,`_blank`)},f=[{img:l,link:`https://plugin.gin-vue-admin.com/license`},{img:u,link:`https://plugin.gin-vue-admin.com`},{img:`https://qmplusimg.henrongyi.top/gvaDemo/k8s.jpg`,link:`https://plugin.gin-vue-admin.com/#/layout/newPluginInfo?id=42`}];return(t,l)=>{let u=e(`el-image`),p=e(`el-carousel-item`),m=e(`el-carousel`);return i(),r(m,{class:`-mt-2`},{default:s(()=>[(i(),c(o,null,a(f,(e,t)=>n(p,{class:`cursor-pointer lg:h-40`,key:t,onClick:t=>d(e.link)},{default:s(()=>[n(u,{class:`h-full w-full`,src:e.img,fit:`fill`},null,8,[`src`])]),_:2},1032,[`onClick`])),64))]),_:1})}}};export{d as default};

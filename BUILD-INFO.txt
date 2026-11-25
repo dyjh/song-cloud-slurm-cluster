@@ -1,11 +1,11 @@
 软件：凇云超算集群服务平台
-版本：v1.1.0
-构建日期：2026-11-24 22:46:30 Asia/Shanghai
-Git HEAD：0a69ac9a0cac45a0f7497ecb02c7d7f9110c515c
-管理端：npm run build（production）
-用户端：npm run build（vue-tsc + Vite）
+版本：v1.1.1
+构建日期：2026-11-25 19:00:32 Asia/Shanghai
+Git HEAD：7dcf2bc6a99fff82976689105143716a12d93a17
+管理端：npm run build（production），平台版本 v1.1.1
+用户端：npm run build（vue-tsc + Vite），包版本 1.1.1
 服务端：Go 1.25.9 / linux amd64 / CGO_ENABLED=1 / trimpath / stripped
 最低 glibc：2.34
 节点工具：probe + cluster-runtime / linux amd64 / CGO_ENABLED=0 / 静态链接，manifest SHA256 核验通过
-服务端 SHA256：3ea6fb745ce6c2400312435f7fcfcdd856dcde2ee8d7d8a21f388b2f691e152e
+服务端 SHA256：9f4ebd7b058dc3fecc41044aea20ae8cae06ff9c824b628a8a0ead201c80636f
 未部署、未启动服务、未执行数据库迁移

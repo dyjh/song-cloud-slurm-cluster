@@ -1,7 +1,7 @@
 <div align="center">
   <img src="dist/logo.png" width="88" alt="SongCloud Data" />
   <h1>SongCloud HPC Cluster Service Platform</h1>
-  <p>SongCloud HPC · v1.1.0</p>
+  <p>SongCloud HPC · v1.1.1</p>
   <p>Resource management, job services and user workspaces for Slurm clusters</p>
   <p>Go · Gin · Vue 3 · TypeScript · MySQL · Redis</p>
   <p><a href="README.md">简体中文</a> | English</p>
@@ -119,7 +119,7 @@ Cluster deployment runs as a sequence of background steps. The task center prese
 ### Package layout
 
 ```text
-v1.0.0/
+v1.1.1/
 ├─ server                 # Linux amd64 backend
 ├─ dist/                  # Production admin assets
 ├─ front-dist/            # Production user-client assets
@@ -157,7 +157,7 @@ Examples use `/www/wwwroot/hpc_manager_server`, HTTP port `80` for administratio
 
 ### Upload and verify
 
-Upload all contents of `v1.0.0/` to an empty directory at `/www/wwwroot/hpc_manager_server/`, keeping the folder structure. The `server` executable is ready to use; no extraction is needed.
+Upload all contents of `v1.1.1/` to an empty directory at `/www/wwwroot/hpc_manager_server/`, keeping the folder structure. The `server` executable is ready to use; no extraction is needed.
 
 ```bash
 cd /www/wwwroot/hpc_manager_server

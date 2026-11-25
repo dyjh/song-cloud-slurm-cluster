@@ -1,4 +1,0 @@
-/*! 
- Build based on gin-vue-admin 
- Time : 1795531370000 */
-import{$ as e,At as t,F as n,O as r,S as i,Y as a,a as o,g as s,lt as c,mt as l,n as u,tt as d,w as f}from"./087AC4D233B64EB0vue.runtime.esm-bundler.wiulPJRg.js";import{O as p}from"./087AC4D233B64EB0user.SSC4CorL.js";l(),n(),o();var m=Object.assign({name:`Statistics`},{__name:`index`,setup(n){let o=p();return(n,l)=>{let p=e(`router-view`);return a(),f(`div`,null,[r(p,null,{default:c(({Component:e})=>[r(u,{mode:`out-in`,name:`el-fade-in-linear`},{default:c(()=>[(a(),i(s,{include:t(o).keepAliveRouters},[(a(),i(d(e)))],1032,[`include`]))]),_:2},1024)]),_:1})])}}});export{m as default};

@@ -1,4 +1,4 @@
 /*! 
  Build based on gin-vue-admin 
- Time : 1795531370000 */
+ Time : 1795604097000 */
 import{Bt as e,C as t,F as n,Q as r,Y as i,cn as a,rn as o,w as s,x as c}from"./087AC4D233B64EB0vue.runtime.esm-bundler.wiulPJRg.js";e(),n();var l={key:0,class:`flex justify-between items-center`},u={class:`text-sm font-semibold tracking-tight text-black dark:text-white`},d={key:0,class:`text-xs text-black/60 dark:text-white/60 hover:text-active cursor-pointer`},f={__name:`card`,props:{title:{type:String,default:``},showAction:{type:Boolean,default:!1},customClass:{type:String,default:``},withoutPadding:{type:Boolean,default:!1}},setup(e){return(n,f)=>(i(),s(`div`,{class:o([`rounded-lg border border-black/10 bg-white text-black/80 dark:text-slate-400 dark:bg-slate-900 dark:text-white/80`,[e.customClass||``,e.withoutPadding?`p-0`:`p-4`]])},[e.title?(i(),s(`div`,l,[c(`div`,u,a(e.title),1),e.showAction?(i(),s(`div`,d,` 更多 `)):t(``,!0)])):t(``,!0),c(`div`,{class:o(e.title?`mt-3`:``)},[r(n.$slots,`default`)],2)],2))}};export{f as default};

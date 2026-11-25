@@ -1,7 +1,7 @@
 <div align="center">
   <img src="dist/logo.png" width="88" alt="凇云数据" />
   <h1>凇云超算集群服务平台</h1>
-  <p>SongCloud HPC · v1.1.0</p>
+  <p>SongCloud HPC · v1.1.1</p>
   <p>面向 Slurm 集群的资源管理、作业服务与用户工作空间</p>
   <p>Go · Gin · Vue 3 · TypeScript · MySQL · Redis</p>
   <p>简体中文 | <a href="README-en.md">English</a></p>
@@ -119,7 +119,7 @@ CPU / GPU 额度为 `0` 表示没有该资源额度。分区默认每卡 CPU 数
 ### 目录结构
 
 ```text
-v1.0.0/
+v1.1.1/
 ├─ server                 # Linux amd64 服务端
 ├─ dist/                  # 管理端生产静态文件
 ├─ front-dist/            # 用户端生产静态文件
@@ -157,7 +157,7 @@ v1.0.0/
 
 ### 上传与校验
 
-将 `v1.0.0/` 内的全部文件上传到服务器的空目录 `/www/wwwroot/hpc_manager_server/`，保持目录结构。`server` 已是可执行文件，无需解压。
+将 `v1.1.1/` 内的全部文件上传到服务器的空目录 `/www/wwwroot/hpc_manager_server/`，保持目录结构。`server` 已是可执行文件，无需解压。
 
 ```bash
 cd /www/wwwroot/hpc_manager_server
